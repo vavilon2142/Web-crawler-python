@@ -2,7 +2,7 @@ from pathlib import Path
 import queue
 import requests
 from bs4 import BeautifulSoup
-
+#@yourvar = {'User-Agent':''}
 
 def crawl(base_url, start_anchor):
     search_anchors = queue.Queue()
@@ -10,7 +10,7 @@ def crawl(base_url, start_anchor):
     while True:
         if not start_anchor:
             start_anchor = '/'
-        response = requests.request('GET', base_url + start_anchor)
+        response = requests.request('GET', base_url + start_anchor) #you can put headers = @yourvar
         soup = BeautifulSoup(response.text, "html.parser")
         anchors = find_local_anchors(soup, start_anchor)
         if anchors:
