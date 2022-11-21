@@ -2,7 +2,7 @@ from pathlib import Path
 import queue
 import requests
 from bs4 import BeautifulSoup
-#@yourvar = {'User-Agent':''}
+
 
 def crawl(base_url, start_anchor):
     search_anchors = queue.Queue()
